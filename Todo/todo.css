@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #5b2c87 0%, #8e44ad 100%);
+  padding: 20px;
+}
+
+.todo-container {
+  background-color: #ffffff;
+  width: clamp(300px, 80vw, 500px);
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 16px);
+  font-size: clamp(14px, 1.8vw, 16px);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.add-btn {
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #5b2c87;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: clamp(10px, 2vw, 14px) 4px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: #333;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+.todo-list input[type="checkbox"] {
+  appearance: none;
+  width: clamp(18px, 2.5vw, 22px);
+  height: clamp(18px, 2.5vw, 22px);
+  border: 2px solid #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.todo-list input[type="checkbox"]:checked {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.todo-list input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: clamp(11px, 1.5vw, 14px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo-list li.done .todo-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-text {
+  flex: 1;
+}
